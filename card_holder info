@@ -1,0 +1,28 @@
+card_holder
+-
+id PK INT
+name STRING
+
+credit_card
+-
+card PK STRING
+id_card_holder INT FK >- card_holder.id
+
+merchant_category
+-
+id PK INT
+name STRING
+
+merchant
+-
+id PK INT FK
+name STRING
+id_merchant_category INT FK >- merchant_category.id
+
+transactions
+-
+id PK INT
+date DATE
+amount FLOAT
+card STRING FK >- credit_card.card
+id_merchant INT FK >- merchant.id
